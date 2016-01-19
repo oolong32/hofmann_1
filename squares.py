@@ -2,26 +2,29 @@ from random import randrange
 
 '''Based on an entry in ‘Graphic Design Manual’, by Armin Hofmann (see p. 57)'''
 
+# Name
+SERIES_NAME = "6_Shapes"
+
 # Target Size
 PAPER_SIZE = "A4"
 
 # Number of Shapes on Page
-xShapes = 28
-yShapes = 21
+xShapes = 2
+yShapes = 3
 
 # Margin between Shapes
-MARGIN_x = 5
-MARGIN_y = 3
+MARGIN_x = 12
+MARGIN_y = 18
 
 # Origin (lower left)
-ORIGIN_x = 24
-ORIGIN_y = 15
+ORIGIN_x = 32
+ORIGIN_y = 32
 
 # Number of Squares in Shape
 NUM_CASES = 3
 
 # Dimension of Squares in Shape
-SIDE = 12
+SIDE = 24
 
 WIDTH = xShapes * (NUM_CASES * SIDE + MARGIN_x) + ORIGIN_x
 HEIGHT = yShapes * (NUM_CASES * SIDE + MARGIN_y) + ORIGIN_y
@@ -57,6 +60,12 @@ def draw_multiple_rows_of_shapes(ORIGIN_x, ORIGIN_y, SIDE):
 
 newPage(PAPER_SIZE)
 
+'''
+# Test
+draw_multiple_rows_of_shapes(ORIGIN_x, ORIGIN_y, SIDE)
+'''
+
+# Production
 for foo in range(1,11):
     draw_multiple_rows_of_shapes(ORIGIN_x, ORIGIN_y, SIDE)
-    saveImage(["~/Desktop/hofmann_" + PAPER_SIZE + "_" + str(foo) + ".pdf"])
+    saveImage(["~/Desktop/" + SERIES_NAME + "_" + PAPER_SIZE + "_" + str(foo) + ".pdf"])
