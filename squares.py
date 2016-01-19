@@ -3,7 +3,7 @@ from random import randrange
 '''Based on an entry in ‘Graphic Design Manual’, by Armin Hofmann (see p. 57)'''
 
 # Target Size
-PAPER_SIZE = "A3Landscape"
+PAPER_SIZE = "A4"
 
 # Number of Shapes on Page
 xShapes = 28
@@ -59,4 +59,4 @@ newPage(PAPER_SIZE)
 
 for foo in range(1,11):
     draw_multiple_rows_of_shapes(ORIGIN_x, ORIGIN_y, SIDE)
-    saveImage(["~/Desktop/hofmann_" + str(foo) + "f.pdf"])
+    saveImage(["~/Desktop/hofmann_" + PAPER_SIZE + "_" + str(foo) + ".pdf"])
